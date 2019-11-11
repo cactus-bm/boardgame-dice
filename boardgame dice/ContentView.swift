@@ -13,16 +13,17 @@ struct ContentView: View {
     let numberFont = 18.0
     let incrementFont = 9.0
     let decrementFont = 12.0
+    let doubleFont = 1.0
     let turnFont = 2.0
     let resetFont = 3.0
     let rollFont = 5.0
     
-    @State var rolls = [2,3,3,4,4,4,
-             5,5,5,5,6,6,
+    @State var rolls = [-2,3,3,-4,4,4,
+             5,5,5,5,-6,6,
              6,6,6,7,7,7,
-             7,7,7,8,8,8,
+             7,7,7,-8,8,8,
              8,8,9,9,9,9,
-        10,10,10,11,11,12].shuffled()
+        -10,10,10,11,11,-12].shuffled()
     
     @State var turn = 0
     
@@ -34,14 +35,15 @@ struct ContentView: View {
             Text("Roll \(self.turn % 31 + 1) / 31").scaledFont(name: "Georgia", size: getSize(ratio: rollFont))
             HStack {
                 Button(action: removePlayer) {
-                    Text("-").scaledFont(name: "Georgia", size: getSize(ratio: decrementFont))
+                    Text("\u{2212}").scaledFont(name: "Georgia", size: getSize(ratio: decrementFont))
                 }
                 Text("Player \((turn % playerCount) + 1) / \(playerCount)").scaledFont(name: "Georgia", size: getSize(ratio: resetFont))
                 Button(action: addPlayer) {
                     Text("+").scaledFont(name: "Georgia", size: getSize(ratio: incrementFont))
                 }
             }
-            Text("\(rolls[turn % 31])").scaledFont(name: "Georgia", size: getSize(ratio: numberFont))
+            Text("\(abs(rolls[turn % 31]))").scaledFont(name: "Georgia", size: getSize(ratio: numberFont))
+            Text("\((rolls[turn % 31] < 0 ? "Double" : ""))").scaledFont(name: "Georgia", size: getSize(ratio: doubleFont))
             Button(action: roll) {
                 Text("Roll").scaledFont(name: "Georgia", size: getSize(ratio: decrementFont))
             }
