@@ -23,7 +23,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if stateModel.isTurn {
-                FrequencyCounter(stateModel: stateModel.frequencyCounter)
+                FrequencyCounter(stateModel: stateModel.frequencyCounter).frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }
+            else {
+                Rectangle()
+                        .fill(Color.black.opacity(0))
+                        .frame(width: 20, height: 50)
             }
             TurnTracker(stateModel: stateModel.turnTracker)
             Text(stateModel.rollValue).scaledFont(name: "Georgia", size: getSize(ratio: numberFont)).frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
