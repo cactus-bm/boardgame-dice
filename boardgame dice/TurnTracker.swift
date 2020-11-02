@@ -53,10 +53,6 @@ struct TurnTracker_Previews: PreviewProvider {
     static var previews: some View {
         let players = PlayersStateModel()
         let stateModel = TurnTrackerStateModel(players: players)
-        players.add(player: Player(color: .blue))
-        players.add(player: Player(color: .orange))
-        players.add(player: Player(color: .white))
-        players.add(player: Player(color: .red))
         return VStack {
             TurnTracker(stateModel: stateModel)
             Button(action: stateModel.increment) {

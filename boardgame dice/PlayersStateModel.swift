@@ -8,9 +8,14 @@
 
 import Foundation
 
-class PlayersStateModel {
+class PlayersStateModel: ObservableObject {
     
-    var players: [Player] = []
+    @Published var players: [Player] = [
+        Player(color: .blue),
+        Player(color: .orange),
+        Player(color: .white),
+        Player(color: .red)
+    ]
     
     func count() -> Int {
         return players.count

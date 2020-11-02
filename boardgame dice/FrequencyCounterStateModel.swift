@@ -8,8 +8,9 @@
 
 import Foundation
 
-class FrequencyCounterStateModel {
-    var frequency: [Int] = [0,0,0,0,0,0,0,0,0,0,0]
+class FrequencyCounterStateModel: ObservableObject {
+    
+    @Published var frequency: [Int] = [0,0,0,0,0,0,0,0,0,0,0]
     
     func setRoll(roll: Int, value: Int) {
         frequency[roll - 2] = value

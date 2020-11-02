@@ -11,7 +11,7 @@ import SwiftUI
 
 struct FrequencyCounter: View {
     
-    let stateModel: FrequencyCounterStateModel
+    @ObservedObject var stateModel: FrequencyCounterStateModel
     
     init(stateModel: FrequencyCounterStateModel) {
         self.stateModel = stateModel
@@ -20,7 +20,7 @@ struct FrequencyCounter: View {
     var body: some View {
         HStack {
             ForEach((2...12), id: \.self) {
-                FrequencyCount(roll: $0, count: stateModel.getRoll(roll: $0))
+                FrequencyCount(roll: $0, count: stateModel.frequency[$0 - 2])
             }
         }
     }
