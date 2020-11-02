@@ -65,7 +65,7 @@ class GameStateModel: ObservableObject {
         frequencyCounter.reset()
         doubleText = ""
         rollValue = ""
-        rollAction = "Roll"
+        rollAction = "Next"
         isTurn = false
     }
 }
