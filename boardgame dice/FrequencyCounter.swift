@@ -12,28 +12,6 @@ import SwiftUI
 let LEFT_BRAILLE: [String] = ["\u{2800}", "\u{2840}", "\u{28C0}", "\u{28C4}", "\u{28E4}", "\u{28E6}", "\u{28F6}"]
 let RIGHT_BRAILLE: [String] = ["\u{2800}", "\u{2880}", "\u{28C0}", "\u{28E0}", "\u{28E4}", "\u{28F4}", "\u{28F6}"]
 
-class FrequencyCounterStateModel {
-    var frequency: [Int] = [0,0,0,0,0,0,0,0,0,0,0]
-    
-    func setRoll(roll: Int, value: Int) {
-        frequency[roll - 2] = value
-    }
-    
-    func getRoll(roll: Int) -> Int {
-        return frequency[roll - 2]
-    }
-    
-    func increment(roll: Int) {
-        self.setRoll(roll: roll, value: self.getRoll(roll: roll) + 1)
-    }
-    
-    func reset() {
-        for roll in 2...12 {
-            self.setRoll(roll: roll, value: 0)
-        }
-    }
-}
-
 struct FrequencyCount: View {
     
     let roll: Int
