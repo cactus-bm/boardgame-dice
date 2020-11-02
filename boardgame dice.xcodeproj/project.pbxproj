@@ -10,6 +10,9 @@
 		1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530A254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530B254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
+		1A755310254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
+		1A755311254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
+		1A755312254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
 		5873685B23791301002D450D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873685A23791301002D450D /* AppDelegate.swift */; };
 		5873685D23791301002D450D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873685C23791301002D450D /* SceneDelegate.swift */; };
 		5873686023791301002D450D /* boardgame_dice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5873685E23791301002D450D /* boardgame_dice.xcdatamodeld */; };
@@ -41,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		1A755308254F573F006333A7 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
+		1A75530F254F6940006333A7 /* TurnTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTracker.swift; sourceTree = "<group>"; };
 		5873685723791301002D450D /* boardgame dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "boardgame dice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5873685A23791301002D450D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5873685C23791301002D450D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				5873685A23791301002D450D /* AppDelegate.swift */,
 				5873685C23791301002D450D /* SceneDelegate.swift */,
 				5873686123791301002D450D /* ContentView.swift */,
+				1A75530F254F6940006333A7 /* TurnTracker.swift */,
 				5873686323791302002D450D /* Assets.xcassets */,
 				5873686823791302002D450D /* LaunchScreen.storyboard */,
 				5873686B23791302002D450D /* Info.plist */,
@@ -282,6 +287,7 @@
 				1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */,
 				5873685B23791301002D450D /* AppDelegate.swift in Sources */,
 				5873686023791301002D450D /* boardgame_dice.xcdatamodeld in Sources */,
+				1A755310254F6940006333A7 /* TurnTracker.swift in Sources */,
 				5873686223791301002D450D /* ContentView.swift in Sources */,
 				5873685D23791301002D450D /* SceneDelegate.swift in Sources */,
 			);
@@ -291,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A755311254F6940006333A7 /* TurnTracker.swift in Sources */,
 				5873687523791302002D450D /* boardgame_diceTests.swift in Sources */,
 				1A75530A254F573F006333A7 /* FrequencyCounter.swift in Sources */,
 			);
@@ -300,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A755312254F6940006333A7 /* TurnTracker.swift in Sources */,
 				5873688023791302002D450D /* boardgame_diceUITests.swift in Sources */,
 				1A75530B254F573F006333A7 /* FrequencyCounter.swift in Sources */,
 			);
