@@ -11,7 +11,11 @@ import Foundation
 
 class TurnTrackerStateModel: ObservableObject {
     @Published var turn: Int = 0
-    var players: [Player] = []
+    let players: PlayersStateModel
+    
+    init(players: PlayersStateModel) {
+        self.players = players
+    }
     
     func current() -> Player {
         return getPlayer(turn: turn)!
@@ -29,17 +33,17 @@ class TurnTrackerStateModel: ObservableObject {
         if turn < 0 {
             return nil
         }
-        if turn < players.count || turn >= 2 * players.count {
-            return players[turn % players.count]
+        if turn < players.count() || turn >= 2 * players.count() {
+            return players.index(turn % players.count())
         }
-        return players[(2 * players.count - turn - 1) % players.count]
+        return players.index((2 * players.count() - turn - 1) % players.count())
     }
     
     func text() -> String {
-        if (self.turn >= players.count * 2) {
-            return "Turn \(self.turn - self.players.count * 2 + 1)"
+        if (self.turn >= players.count() * 2) {
+            return "Turn \(self.turn - self.players.count() * 2 + 1)"
         }
-        else if (self.turn >= players.count) {
+        else if (self.turn >= players.count()) {
             return "Second Settlement and Road"
         }
         else {

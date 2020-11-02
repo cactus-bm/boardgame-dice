@@ -11,6 +11,15 @@
 		1A42432C25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */; };
 		1A42432D25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */; };
 		1A42432E25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */; };
+		1A42433625500466007E72C3 /* GameStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433525500466007E72C3 /* GameStateModel.swift */; };
+		1A42433725500466007E72C3 /* GameStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433525500466007E72C3 /* GameStateModel.swift */; };
+		1A42433825500466007E72C3 /* GameStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433525500466007E72C3 /* GameStateModel.swift */; };
+		1A42433D25500513007E72C3 /* PlayersStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433C25500513007E72C3 /* PlayersStateModel.swift */; };
+		1A42433E25500513007E72C3 /* PlayersStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433C25500513007E72C3 /* PlayersStateModel.swift */; };
+		1A42433F25500513007E72C3 /* PlayersStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42433C25500513007E72C3 /* PlayersStateModel.swift */; };
+		1A424344255006BC007E72C3 /* FrequencyCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A424343255006BC007E72C3 /* FrequencyCount.swift */; };
+		1A424345255006BC007E72C3 /* FrequencyCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A424343255006BC007E72C3 /* FrequencyCount.swift */; };
+		1A424346255006BC007E72C3 /* FrequencyCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A424343255006BC007E72C3 /* FrequencyCount.swift */; };
 		1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530A254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530B254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
@@ -49,6 +58,9 @@
 /* Begin PBXFileReference section */
 		1A42432625500306007E72C3 /* TurnTrackerStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTrackerStateModel.swift; sourceTree = "<group>"; };
 		1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounterStateModel.swift; sourceTree = "<group>"; };
+		1A42433525500466007E72C3 /* GameStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateModel.swift; sourceTree = "<group>"; };
+		1A42433C25500513007E72C3 /* PlayersStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersStateModel.swift; sourceTree = "<group>"; };
+		1A424343255006BC007E72C3 /* FrequencyCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCount.swift; sourceTree = "<group>"; };
 		1A755308254F573F006333A7 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
 		1A75530F254F6940006333A7 /* TurnTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTracker.swift; sourceTree = "<group>"; };
 		5873685723791301002D450D /* boardgame dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "boardgame dice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +142,9 @@
 				1A755308254F573F006333A7 /* FrequencyCounter.swift */,
 				1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */,
 				1A42432625500306007E72C3 /* TurnTrackerStateModel.swift */,
+				1A42433525500466007E72C3 /* GameStateModel.swift */,
+				1A42433C25500513007E72C3 /* PlayersStateModel.swift */,
+				1A424343255006BC007E72C3 /* FrequencyCount.swift */,
 			);
 			path = "boardgame dice";
 			sourceTree = "<group>";
@@ -292,11 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A42433D25500513007E72C3 /* PlayersStateModel.swift in Sources */,
 				1A42432725500306007E72C3 /* TurnTrackerStateModel.swift in Sources */,
 				1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */,
 				5873685B23791301002D450D /* AppDelegate.swift in Sources */,
 				5873686023791301002D450D /* boardgame_dice.xcdatamodeld in Sources */,
 				1A755310254F6940006333A7 /* TurnTracker.swift in Sources */,
+				1A424344255006BC007E72C3 /* FrequencyCount.swift in Sources */,
+				1A42433625500466007E72C3 /* GameStateModel.swift in Sources */,
 				5873686223791301002D450D /* ContentView.swift in Sources */,
 				1A42432C25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */,
 				5873685D23791301002D450D /* SceneDelegate.swift in Sources */,
@@ -307,10 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A42433E25500513007E72C3 /* PlayersStateModel.swift in Sources */,
 				1A755311254F6940006333A7 /* TurnTracker.swift in Sources */,
 				5873687523791302002D450D /* boardgame_diceTests.swift in Sources */,
 				1A42432D25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */,
 				1A75530A254F573F006333A7 /* FrequencyCounter.swift in Sources */,
+				1A42433725500466007E72C3 /* GameStateModel.swift in Sources */,
+				1A424345255006BC007E72C3 /* FrequencyCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A42433F25500513007E72C3 /* PlayersStateModel.swift in Sources */,
 				1A755312254F6940006333A7 /* TurnTracker.swift in Sources */,
 				5873688023791302002D450D /* boardgame_diceUITests.swift in Sources */,
 				1A42432E25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */,
 				1A75530B254F573F006333A7 /* FrequencyCounter.swift in Sources */,
+				1A42433825500466007E72C3 /* GameStateModel.swift in Sources */,
+				1A424346255006BC007E72C3 /* FrequencyCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
