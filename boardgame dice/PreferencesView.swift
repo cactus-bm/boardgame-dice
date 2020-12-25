@@ -33,9 +33,13 @@ struct PreferencesView: View {
                     }
                     Spacer()
                     Toggle(isOn: $stateModel.turnTracker.players.players[playerIndex].isOn) {}
-                }.frame(width: 300)
+                }
             }
-        }
+            Text("Audio")
+            Toggle(isOn: $stateModel.audioOn) {
+                Text("Speak dice rolls")
+            }
+        }.frame(width: 300)
     }
 }
 
