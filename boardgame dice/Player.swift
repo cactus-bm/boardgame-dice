@@ -9,10 +9,13 @@
 import Foundation
 import SwiftUI
 
-class Player {
+
+class Player: Identifiable, ObservableObject {
     let color: Color
+    @Published var isOn: Bool
     
-    init(color: Color) {
+    init(color: Color, isOn: Bool) {
         self.color = color
+        self.isOn = isOn
     }
 }

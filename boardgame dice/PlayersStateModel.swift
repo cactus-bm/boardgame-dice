@@ -7,26 +7,25 @@
 //
 
 import Foundation
+import SwiftUI
 
 class PlayersStateModel: ObservableObject {
-    
+        
     @Published var players: [Player] = [
-        Player(color: .blue),
-        Player(color: .orange),
-        Player(color: .red),
-        Player(color: .white)
+        Player(color: .blue, isOn: true),
+        Player(color: .orange, isOn: true),
+        Player(color: .red, isOn: true),
+        Player(color: .white, isOn: false),
+        Player(color: .green, isOn: false),
+        Player(color: Color(.brown), isOn: false)
     ]
     
     func count() -> Int {
-        return players.count
+        return players.filter({$0.isOn}).count
     }
     
     func index(_ at: Int) -> Player {
-        return players[at]
-    }
-    
-    func add(player: Player) {
-        players.append(player)
+        return players.filter({$0.isOn})[at]
     }
     
     func reset() {

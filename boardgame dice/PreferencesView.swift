@@ -12,14 +12,36 @@ import SwiftUI
 
 struct PreferencesView: View {
 
-    let stateModel: GameStateModel
+    @ObservedObject var stateModel: GameStateModel
 
     init(stateModel: GameStateModel) {
         self.stateModel = stateModel
     }
 
     var body: some View {
-        Text("Preferences")
+        VStack {
+            Text("Players")
+            ForEach(0 ..< stateModel.turnTracker.players.players.count) { playerIndex in
+                HStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.black)
+                            .frame(width: 42, height: 42)
+                        Rectangle()
+                            .fill(stateModel.turnTracker.players.players[playerIndex].color)
+                            .frame(width: 40, height: 40)
+                    }
+                    Spacer()
+                    Toggle(isOn: $stateModel.turnTracker.players.players[playerIndex].isOn) {}
+                }.frame(width: 300)
+            }
+        }
     }
 }
 
+
+struct PreferencesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PreferencesView(stateModel: GameStateModel())
+    }
+}
