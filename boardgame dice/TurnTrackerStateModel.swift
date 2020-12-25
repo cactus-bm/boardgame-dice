@@ -70,5 +70,6 @@ class TurnTrackerStateModel: ObservableObject {
     
     func reset() {
         self.turn = 0
+        self.players.reset()
     }
 }

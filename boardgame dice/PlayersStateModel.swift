@@ -28,4 +28,8 @@ class PlayersStateModel: ObservableObject {
     func add(player: Player) {
         players.append(player)
     }
+    
+    func reset() {
+        self.players.shuffle()
+    }
 }
