@@ -13,8 +13,8 @@ class PlayersStateModel: ObservableObject {
     @Published var players: [Player] = [
         Player(color: .blue),
         Player(color: .orange),
-        Player(color: .white),
-        Player(color: .red)
+        Player(color: .red),
+        Player(color: .white)
     ]
     
     func count() -> Int {
