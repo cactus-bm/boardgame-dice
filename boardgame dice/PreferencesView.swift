@@ -11,6 +11,13 @@ import Foundation
 import SwiftUI
 
 struct PreferencesView: View {
+
+    let stateModel: GameStateModel
+
+    init(stateModel: GameStateModel) {
+        self.stateModel = stateModel
+    }
+
     var body: some View {
         Text("Preferences")
     }

@@ -9,17 +9,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    let stateModel: GameStateModel
+    @ObservedObject var stateModel: GameStateModel
     let diceView: DiceView
+    let preferencesView: PreferencesView
     
     init() {
         let stateModel = GameStateModel()
         diceView = DiceView(stateModel: stateModel)
+        preferencesView = PreferencesView(stateModel: stateModel)
         self.stateModel = stateModel
     }
     
     var body: some View {
-        diceView
+        ZStack {
+            if self.stateModel.showPreferences {
+                preferencesView
+            }
+            else {
+                diceView
+            }
+            VStack {
+                HStack(alignment: .top) {
+                    Spacer()
+                    Button(action: {
+                        self.stateModel.showPreferences = !self.stateModel.showPreferences
+                    }) {
+                        if self.stateModel.showPreferences {
+                            Image(systemName: "xmark").font(.system(size: 40.0))
+                        }
+                        else {
+                            Image(systemName: "gear").font(.system(size: 40.0))
+                        }
+                    }.padding()
+                }
+                Spacer()
+            }
+        }
     }
 }
 
