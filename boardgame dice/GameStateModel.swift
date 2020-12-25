@@ -18,7 +18,7 @@ class GameStateModel: ObservableObject {
     @Published var doubleText: String = ""
     @Published var shuffleAfter: Int = 31
     @Published var isTurn: Bool = false
-    @Published var rollAction: String = "Roll"
+    @Published var rollAction: String = "Next"
     
     init() {
         self.turnTracker = TurnTrackerStateModel(players: PlayersStateModel())
