@@ -31,10 +31,10 @@ struct ContentView: View {
                         .frame(width: 20, height: 50)
             }
             TurnTracker(stateModel: stateModel.turnTracker)
-            Text(stateModel.rollValue).scaledFont(name: "Georgia", size: getSize(ratio: numberFont)).frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text(stateModel.rollValue).scaledFont(name: "Georgia", size: getSize(ratio: numberFont)).frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text(stateModel.doubleText).scaledFont(name: "Georgia", size: getSize(ratio: doubleFont)).frame(width: 200, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Button(action: stateModel.roll) {
-                Text(stateModel.rollAction).scaledFont(name: "Georgia", size: getSize(ratio: decrementFont)).frame(width: 200, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Text(stateModel.rollAction).scaledFont(name: "Georgia", size: getSize(ratio: decrementFont)).frame(width: 400, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             Button(action: stateModel.reset) {
                 Text("Reset").scaledFont(name: "Georgia", size: getSize(ratio: resetFont))
