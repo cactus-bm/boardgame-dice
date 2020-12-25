@@ -19,12 +19,12 @@ struct FrequencyCount: View {
     var body: some View {
         VStack {
             if roll < 7 {
-                Text(RIGHT_BRAILLE[count]).scaledFont(name: "Georgia", size: 12)
+                Text(RIGHT_BRAILLE[count]).scaledFont(name: "Georgia", size: 24)
             }
             else {
-                Text(LEFT_BRAILLE[count]).scaledFont(name: "Georgia", size: 12)
+                Text(LEFT_BRAILLE[count]).scaledFont(name: "Georgia", size: 24)
             }
-            Text("\(roll)").frame(width: 15, alignment: .center).scaledFont(name: "Georgia", size: 12)
+            Text("\(roll)").frame(width: 30, alignment: .center).scaledFont(name: "Georgia", size: 24)
         }
     }
 }
