@@ -22,19 +22,23 @@ struct TurnTracker: View {
                 if let previous = stateModel.previous() {
                     Rectangle()
                         .fill(previous.color)
-                        .frame(width: 20, height: 20)
+                        .frame(width: 40, height: 40)
+                        .border(Color.black)
                 }
                 else {
                     Rectangle()
                         .fill(Color.black.opacity(0))
-                        .frame(width: 20, height: 20)
+                        .frame(width: 40, height: 40)
+                        .border(Color.black.opacity(0))
                 }
                 Rectangle()
                     .fill(stateModel.current().color)
-                    .frame(width: 40, height: 40)
+                    .frame(width: 80, height: 80)
+                    .border(Color.black)
                 Rectangle()
                     .fill(stateModel.next().color)
-                    .frame(width: 20, height: 20)
+                    .frame(width: 40, height: 40)
+                    .border(Color.black)
             }
             Text(stateModel.text())
         }
