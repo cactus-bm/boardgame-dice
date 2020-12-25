@@ -29,6 +29,10 @@
 		1A755310254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
 		1A755311254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
 		1A755312254F6940006333A7 /* TurnTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75530F254F6940006333A7 /* TurnTracker.swift */; };
+		1A87C688259610CF00AAC667 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87C687259610CF00AAC667 /* DiceView.swift */; };
+		1A87C68D2596115C00AAC667 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87C68C2596115C00AAC667 /* ScaledFont.swift */; };
+		1A87C698259611F100AAC667 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87C697259611F100AAC667 /* View+Extensions.swift */; };
+		1A87C6A32596138100AAC667 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A87C6A22596138100AAC667 /* Player.swift */; };
 		5873685B23791301002D450D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873685A23791301002D450D /* AppDelegate.swift */; };
 		5873685D23791301002D450D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873685C23791301002D450D /* SceneDelegate.swift */; };
 		5873686023791301002D450D /* boardgame_dice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5873685E23791301002D450D /* boardgame_dice.xcdatamodeld */; };
@@ -67,6 +71,10 @@
 		1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollTrackerStateModel.swift; sourceTree = "<group>"; };
 		1A755308254F573F006333A7 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
 		1A75530F254F6940006333A7 /* TurnTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTracker.swift; sourceTree = "<group>"; };
+		1A87C687259610CF00AAC667 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		1A87C68C2596115C00AAC667 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
+		1A87C697259611F100AAC667 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		1A87C6A22596138100AAC667 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5873685723791301002D450D /* boardgame dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "boardgame dice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5873685A23791301002D450D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5873685C23791301002D450D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,22 +142,26 @@
 		5873685923791301002D450D /* boardgame dice */ = {
 			isa = PBXGroup;
 			children = (
-				5873685A23791301002D450D /* AppDelegate.swift */,
-				5873685C23791301002D450D /* SceneDelegate.swift */,
-				5873686123791301002D450D /* ContentView.swift */,
-				1A75530F254F6940006333A7 /* TurnTracker.swift */,
-				5873686323791302002D450D /* Assets.xcassets */,
-				5873686823791302002D450D /* LaunchScreen.storyboard */,
-				5873686B23791302002D450D /* Info.plist */,
-				5873685E23791301002D450D /* boardgame_dice.xcdatamodeld */,
 				5873686523791302002D450D /* Preview Content */,
+				5873686323791302002D450D /* Assets.xcassets */,
+				5873685A23791301002D450D /* AppDelegate.swift */,
+				5873685E23791301002D450D /* boardgame_dice.xcdatamodeld */,
+				1A87C687259610CF00AAC667 /* DiceView.swift */,
+				5873686123791301002D450D /* ContentView.swift */,
+				1A424343255006BC007E72C3 /* FrequencyCount.swift */,
 				1A755308254F573F006333A7 /* FrequencyCounter.swift */,
 				1A42432B25500398007E72C3 /* FrequencyCounterStateModel.swift */,
-				1A42432625500306007E72C3 /* TurnTrackerStateModel.swift */,
 				1A42433525500466007E72C3 /* GameStateModel.swift */,
+				5873686B23791302002D450D /* Info.plist */,
+				5873686823791302002D450D /* LaunchScreen.storyboard */,
+				1A87C6A22596138100AAC667 /* Player.swift */,
 				1A42433C25500513007E72C3 /* PlayersStateModel.swift */,
-				1A424343255006BC007E72C3 /* FrequencyCount.swift */,
 				1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */,
+				1A87C68C2596115C00AAC667 /* ScaledFont.swift */,
+				5873685C23791301002D450D /* SceneDelegate.swift */,
+				1A75530F254F6940006333A7 /* TurnTracker.swift */,
+				1A42432625500306007E72C3 /* TurnTrackerStateModel.swift */,
+				1A87C697259611F100AAC667 /* View+Extensions.swift */,
 			);
 			path = "boardgame dice";
 			sourceTree = "<group>";
@@ -316,10 +328,14 @@
 				1A42432725500306007E72C3 /* TurnTrackerStateModel.swift in Sources */,
 				1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */,
 				5873685B23791301002D450D /* AppDelegate.swift in Sources */,
+				1A87C6A32596138100AAC667 /* Player.swift in Sources */,
+				1A87C698259611F100AAC667 /* View+Extensions.swift in Sources */,
 				5873686023791301002D450D /* boardgame_dice.xcdatamodeld in Sources */,
 				1A42434B255009BC007E72C3 /* RollTrackerStateModel.swift in Sources */,
+				1A87C68D2596115C00AAC667 /* ScaledFont.swift in Sources */,
 				1A755310254F6940006333A7 /* TurnTracker.swift in Sources */,
 				1A424344255006BC007E72C3 /* FrequencyCount.swift in Sources */,
+				1A87C688259610CF00AAC667 /* DiceView.swift in Sources */,
 				1A42433625500466007E72C3 /* GameStateModel.swift in Sources */,
 				5873686223791301002D450D /* ContentView.swift in Sources */,
 				1A42432C25500398007E72C3 /* FrequencyCounterStateModel.swift in Sources */,

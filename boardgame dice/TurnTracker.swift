@@ -8,14 +8,6 @@
 
 import SwiftUI
 
-class Player {
-    let color: Color
-    
-    init(color: Color) {
-        self.color = color
-    }
-}
-
 struct TurnTracker: View {
     
     @ObservedObject var stateModel: TurnTrackerStateModel
