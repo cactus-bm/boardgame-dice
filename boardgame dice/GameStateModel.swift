@@ -22,6 +22,7 @@ class GameStateModel: ObservableObject {
     @Published var rollAction: String = "Next"
     @Published var showPreferences = false
     @Published var audioOn = false
+    @Published var namesOn = false
     let synthesizer = AVSpeechSynthesizer()
     
     init() {
@@ -62,9 +63,10 @@ class GameStateModel: ObservableObject {
         isTurn = turnTracker.isTurn()
         rollAction = turnTracker.nextIsTurn() ? "Roll" : "Next"
         if audioOn && rollValue.count > 0 {
-            let utterance = AVSpeechUtterance(string: rollValue)
+            let name = turnTracker.current().name
+            let speech = namesOn && name.count > 0 ? "\(name) has rolled a \(rollValue)" : rollValue
+            let utterance = AVSpeechUtterance(string: speech)
             utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-            utterance.rate = 0.1
             synthesizer.speak(utterance)
         }
     }
