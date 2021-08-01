@@ -11,11 +11,17 @@ import SwiftUI
 
 
 class Player: Identifiable, ObservableObject {
-    let color: Color
-    @Published var isOn: Bool
+    var id = UUID()
+    var color: Color
+    var isOn: Bool
+    var name: String
+    var sortOrder: Int
     
-    init(color: Color, isOn: Bool) {
+    
+    init(color: Color, isOn: Bool, sortOrder: Int) {
         self.color = color
         self.isOn = isOn
+        self.sortOrder = sortOrder
+        self.name = ""
     }
 }

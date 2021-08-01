@@ -21,23 +21,32 @@ struct PreferencesView: View {
     var body: some View {
         VStack {
             Text("Players")
-            ForEach(0 ..< stateModel.turnTracker.players.players.count) { playerIndex in
+            ForEach(stateModel.turnTracker.players.players.sorted(by: { $0.sortOrder < $1.sortOrder })) { player in
                 HStack {
                     ZStack {
                         Rectangle()
                             .fill(Color.black)
                             .frame(width: 42, height: 42)
                         Rectangle()
-                            .fill(stateModel.turnTracker.players.players[playerIndex].color)
+                            .fill(player.color)
                             .frame(width: 40, height: 40)
                     }
-                    Spacer()
-                    Toggle(isOn: $stateModel.turnTracker.players.players[playerIndex].isOn) {}
+                    TextField("", text: .init(
+                        get: { player.name },
+                        set: { player.name = $0 }
+                    ))
+                    Toggle(isOn: .init(
+                            get: { player.isOn },
+                            set: { player.isOn = $0 })
+                    ) {}
                 }
             }
             Text("Audio")
             Toggle(isOn: $stateModel.audioOn) {
                 Text("Speak dice rolls")
+            }
+            Toggle(isOn: $stateModel.namesOn) {
+                Text("Speak names")
             }
         }.frame(width: 300)
     }
