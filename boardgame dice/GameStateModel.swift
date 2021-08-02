@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 class GameStateModel: ObservableObject {
     @ObservedObject var turnTracker: TurnTrackerStateModel
@@ -19,6 +20,10 @@ class GameStateModel: ObservableObject {
     @Published var shuffleAfter: Int = 31
     @Published var isTurn: Bool = false
     @Published var rollAction: String = "Next"
+    @Published var showPreferences = false
+    @Published var audioOn = false
+    @Published var namesOn = false
+    let synthesizer = AVSpeechSynthesizer()
     
     init() {
         self.turnTracker = TurnTrackerStateModel(players: PlayersStateModel())
@@ -57,6 +62,13 @@ class GameStateModel: ObservableObject {
         }
         isTurn = turnTracker.isTurn()
         rollAction = turnTracker.nextIsTurn() ? "Roll" : "Next"
+        if audioOn && rollValue.count > 0 {
+            let name = turnTracker.current().name
+            let speech = namesOn && name.count > 0 ? "\(name) has rolled a \(rollValue)" : rollValue
+            let utterance = AVSpeechUtterance(string: speech)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            synthesizer.speak(utterance)
+        }
     }
     
     func reset() {

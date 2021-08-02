@@ -18,18 +18,13 @@ struct FrequencyCount: View {
     
     var body: some View {
         VStack {
-            if roll < 7 {
-                Text(RIGHT_BRAILLE[count]).scaledFont(name: "Georgia", size: 12)
-            }
-            else {
-                Text(LEFT_BRAILLE[count]).scaledFont(name: "Georgia", size: 12)
-            }
-            Text("\(roll)").frame(width: 15, alignment: .center).scaledFont(name: "Georgia", size: 12)
-        }
+            Text(LEFT_BRAILLE[count]).scaledFont(name: "Georgia", size: 24)
+            Text("\(roll)").scaledFont(name: "Georgia", size: 24)
+        }.frame(width: roll < 10 ? 20 : 40, alignment: .center)
     }
 }
 struct FrequencyCount_Previews: PreviewProvider {
     static var previews: some View {
-        FrequencyCount(roll:11, count:2)
+        FrequencyCount(roll:1, count:2)
     }
 }
