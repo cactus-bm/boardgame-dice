@@ -23,6 +23,9 @@ class GameStateModel: ObservableObject {
     @Published var showPreferences = false
     @Published var audioOn = false
     @Published var namesOn = false
+    @Published var rollRandomly = true
+    @Published var rollResetRandomly = false
+    @Published var resetCounterOnShuffle = true
     let synthesizer = AVSpeechSynthesizer()
     
     init() {
@@ -51,8 +54,16 @@ class GameStateModel: ObservableObject {
     
     func roll() {
         turnTracker.increment()
-        if turnTracker.turnIndex() % shuffleAfter == 0 {
-            frequencyCounter.reset()
+        if rollRandomly {
+            rollTracker.shuffle()
+        }
+        else if turnTracker.turnIndex() % shuffleAfter == 0 {
+            if rollResetRandomly {
+                shuffleAfter = Int.random(in: 1..<36)
+            }
+            if resetCounterOnShuffle {
+                frequencyCounter.reset()
+            }
             rollTracker.shuffle()
         }
         doubleText = deriveDoubleText()
