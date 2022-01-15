@@ -28,7 +28,7 @@ struct DiceView: View {
         VStack {
             Spacer()
             if stateModel.isTurn {
-                FrequencyCounter(stateModel: stateModel.frequencyCounter).frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                FrequencyCounter(stateModel: stateModel.frequencyCounter).frame(width: 200,  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             else {
                 Rectangle()
