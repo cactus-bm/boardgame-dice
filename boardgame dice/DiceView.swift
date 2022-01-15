@@ -44,6 +44,7 @@ struct DiceView: View {
             Button(action: stateModel.reset) {
                 Text("Reset").scaledFont(name: "Georgia", size: getSize(ratio: resetFont))
             }
+            Spacer()
         }
     }
     
