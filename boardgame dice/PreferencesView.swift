@@ -78,11 +78,13 @@ struct PreferencesView: View {
     }
 
     var body: some View {
-        VStack {
-            players
-            audio
-            dice
-        }.frame(width: 300)
+        ScrollView (.vertical, showsIndicators: false) {
+            VStack {
+                players
+                audio
+                dice
+            }.frame(width: 320).padding(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 5))
+        }.padding(.bottom, 1).padding(.top, 1)
     }
 }
 
