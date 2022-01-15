@@ -16,15 +16,24 @@ struct FrequencyCount: View {
     let roll: Int
     let count: Int
     
+    func dots(_ row: Int) -> Int {
+        if row < count / 8 {
+            return 8
+        }
+        if row > count / 8 {
+            return 0
+        }
+        return count % 8
+    }
     
     var body: some View {
         let braile = roll > 7 ? LEFT_BRAILLE : RIGHT_BRAILLE
         VStack(alignment: .center) {
-            ForEach((0...count/8).reversed(), id: \.self) { i in
-                Text(braile[i == count/8 ? count % 8 : 8]).scaledFont(name: "Georgia", size: 24).frame(width: 12)
+            ForEach((0...max(1,count/8)).reversed(), id: \.self) { row in
+                Text(braile[dots(row)]).scaledFont(name: "Georgia", size: 24).frame(width: 12)
             }
             Text("\(roll)").scaledFont(name: "Georgia", size: 24)
-        }.frame(width: 26, alignment: .center)
+        }.frame(minWidth: 32, alignment: .center)
 
     }
 }
