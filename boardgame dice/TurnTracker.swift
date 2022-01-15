@@ -11,36 +11,56 @@ import SwiftUI
 struct TurnTracker: View {
     
     @ObservedObject var stateModel: TurnTrackerStateModel
+    let alignment: Axis
     
-    init(stateModel: TurnTrackerStateModel) {
+    init(stateModel: TurnTrackerStateModel, alignment: Axis = .horizontal) {
         self.stateModel = stateModel
+        self.alignment = alignment
+    }
+    
+    var previous: some View {
+        if let previous = stateModel.previous() {
+            return Rectangle()
+                .fill(previous.color)
+                .frame(width: 40, height: 40)
+                .border(Color.black)
+        }
+        else {
+            return Rectangle()
+                .fill(Color.black.opacity(0))
+                .frame(width: 40, height: 40)
+                .border(Color.black.opacity(0))
+        }
+    }
+    
+    var current: some View {
+        Rectangle()
+            .fill(stateModel.current().color)
+            .frame(width: 80, height: 80)
+            .border(Color.black)
+    }
+    
+    var next: some View {
+        Rectangle()
+            .fill(stateModel.next().color)
+            .frame(width: 40, height: 40)
+            .border(Color.black)
     }
     
     var body: some View {
-        VStack {
+        switch self.alignment {
+        case .horizontal :
             HStack {
-                if let previous = stateModel.previous() {
-                    Rectangle()
-                        .fill(previous.color)
-                        .frame(width: 40, height: 40)
-                        .border(Color.black)
-                }
-                else {
-                    Rectangle()
-                        .fill(Color.black.opacity(0))
-                        .frame(width: 40, height: 40)
-                        .border(Color.black.opacity(0))
-                }
-                Rectangle()
-                    .fill(stateModel.current().color)
-                    .frame(width: 80, height: 80)
-                    .border(Color.black)
-                Rectangle()
-                    .fill(stateModel.next().color)
-                    .frame(width: 40, height: 40)
-                    .border(Color.black)
+                previous
+                current
+                next
             }
-            Text(stateModel.text())
+        case .vertical:
+            VStack {
+                previous
+                current
+                next
+            }
         }
     }
 }
