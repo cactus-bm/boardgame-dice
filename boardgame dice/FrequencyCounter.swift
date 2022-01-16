@@ -18,7 +18,7 @@ struct FrequencyCounter: View {
     }
     
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom, spacing: 0) {
             ForEach((2...12), id: \.self) {
                 FrequencyCount(roll: $0, count: stateModel.frequency[$0 - 2])
             }
@@ -34,7 +34,7 @@ struct FrequencyCounter_Previews: PreviewProvider {
         stateModel.setRoll(roll: 4,value: 3)
         stateModel.setRoll(roll: 5,value: 4)
         stateModel.setRoll(roll: 6,value: 5)
-        stateModel.setRoll(roll: 7,value: 6)
+        stateModel.setRoll(roll: 7,value: 18)
         stateModel.setRoll(roll: 8,value: 5)
         stateModel.setRoll(roll: 9,value: 4)
         stateModel.setRoll(roll: 10,value: 3)

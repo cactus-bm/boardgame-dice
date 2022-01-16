@@ -17,8 +17,8 @@ struct PreferencesView: View {
     init(stateModel: GameStateModel) {
         self.stateModel = stateModel
     }
-
-    var body: some View {
+    
+    var players: some View {
         VStack {
             Text("Players")
             ForEach(stateModel.turnTracker.players.players.sorted(by: { $0.sortOrder < $1.sortOrder })) { player in
@@ -41,6 +41,11 @@ struct PreferencesView: View {
                     ) {}
                 }
             }
+        }
+    }
+    
+    var audio: some View {
+        VStack {
             Text("Audio")
             Toggle(isOn: $stateModel.audioOn) {
                 Text("Speak dice rolls")
@@ -48,7 +53,38 @@ struct PreferencesView: View {
             Toggle(isOn: $stateModel.namesOn) {
                 Text("Speak names")
             }
-        }.frame(width: 300)
+        }
+    }
+    
+    var dice: some View {
+        VStack {
+            Text("Dice")
+            Toggle(isOn: $stateModel.rollRandomly) {
+                Text("Roll Randomly")
+            }
+            Toggle(isOn: $stateModel.rollResetRandomly) {
+                Text("Reset Randomly")
+            }.disabled(stateModel.rollRandomly)
+            Text("Rolls between reset: \(stateModel.shuffleAfter)")
+            Picker("", selection: $stateModel.shuffleAfter) {
+                ForEach(2 ..< 37, id: \.self) { i in
+                    Text("\(i) Rolls").tag(i)
+                }
+            }.disabled(stateModel.rollRandomly || stateModel.rollResetRandomly)
+            Toggle(isOn: $stateModel.resetCounterOnShuffle) {
+                Text("Reset Tally on Shuffle")
+            }.disabled(stateModel.rollRandomly)
+        }
+    }
+
+    var body: some View {
+        ScrollView (.vertical, showsIndicators: false) {
+            VStack {
+                players
+                audio
+                dice
+            }.frame(width: 320).padding(EdgeInsets(top: 0,leading: 0,bottom: 0,trailing: 5))
+        }.padding(.bottom, 1).padding(.top, 1)
     }
 }
 

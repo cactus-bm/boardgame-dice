@@ -16,7 +16,7 @@ struct DiceView: View {
     let doubleFont = 1.0
     let turnFont = 2.0
     let resetFont = 3.0
-    let rollFont = 5.0
+    let rollFont = 20.0
     
     @ObservedObject var stateModel: GameStateModel
     
@@ -24,22 +24,10 @@ struct DiceView: View {
         self.stateModel = stateModel
     }
     
-    var body: some View {
-        VStack {
-            Spacer()
-            if stateModel.isTurn {
-                FrequencyCounter(stateModel: stateModel.frequencyCounter).frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            }
-            else {
-                Rectangle()
-                        .fill(Color.black.opacity(0))
-                        .frame(width: 20, height: 50)
-            }
-            TurnTracker(stateModel: stateModel.turnTracker)
-            Text(stateModel.rollValue).scaledFont(name: "Georgia", size: getSize(ratio: numberFont)).frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text(stateModel.doubleText).scaledFont(name: "Georgia", size: getSize(ratio: doubleFont)).frame(width: 200, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    var buttons: some View {
+        VStack(alignment: .center)  {
             Button(action: stateModel.roll) {
-                Text(stateModel.rollAction).scaledFont(name: "Georgia", size: getSize(ratio: decrementFont)).frame(width: 400, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Text(stateModel.rollAction).scaledFont(name: "Georgia", size: getSize(ratio: decrementFont)).frame(height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             Button(action: stateModel.reset) {
                 Text("Reset").scaledFont(name: "Georgia", size: getSize(ratio: resetFont))
@@ -47,8 +35,57 @@ struct DiceView: View {
         }
     }
     
+    func isPortrait(_ geometry: GeometryProxy) -> Bool {
+        return geometry.size.height > 900 || geometry.size.width < geometry.size.height
+    }
+    
+    var roll: some View {
+        GeometryReader { (geometry) in
+            let rollFrameHeight = min(300, geometry.size.height - 60)
+            HStack(alignment: .center) {
+                Spacer()
+                VStack(alignment: .center) {
+                    Text(stateModel.turnTracker.text()).frame(height:40)
+                    Text(stateModel.rollValue)
+                        .scaledFont(name: "Georgia", size: getSizeInFrame(ratio: rollFont, height: rollFrameHeight, frame: 300))
+                        .frame(width: rollFrameHeight, height: rollFrameHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Text(stateModel.doubleText).scaledFont(name: "Georgia", size: 12).frame(height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                Spacer()
+            }
+        }.frame(maxHeight: 360)
+    }
+    
+    var body: some View {
+        GeometryReader { (geometry) in
+            VStack {
+                Spacer()
+                if isPortrait(geometry) {
+                    if stateModel.isTurn {
+                        FrequencyCounter(stateModel: stateModel.frequencyCounter).frame(width: 200,  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                    TurnTracker(stateModel: stateModel.turnTracker)
+                    roll
+                    buttons
+                }
+                else {
+                    HStack {
+                        TurnTracker(stateModel: stateModel.turnTracker, alignment: .vertical)
+                        roll
+                        buttons
+                    }
+                }
+                Spacer()
+            }
+        }
+    }
+    
     func getSize(ratio: Double) -> CGFloat {
         return CGFloat(12.0 * ratio / 1000.0) * UIScreen.main.bounds.size.height
+    }
+    
+    func getSizeInFrame(ratio: Double, height: Double, frame: Double) -> CGFloat {
+        return CGFloat(12.0 * ratio / frame) * height
     }
 }
 
