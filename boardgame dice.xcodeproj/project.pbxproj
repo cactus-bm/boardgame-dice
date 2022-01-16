@@ -23,6 +23,9 @@
 		1A42434B255009BC007E72C3 /* RollTrackerStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */; };
 		1A42434C255009BC007E72C3 /* RollTrackerStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */; };
 		1A42434D255009BC007E72C3 /* RollTrackerStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */; };
+		1A4BA02D27939141007E8C75 /* Logo - Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BA02C27939140007E8C75 /* Logo - Grey.png */; };
+		1A4BA02E27939141007E8C75 /* Logo - Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BA02C27939140007E8C75 /* Logo - Grey.png */; };
+		1A4BA02F27939141007E8C75 /* Logo - Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BA02C27939140007E8C75 /* Logo - Grey.png */; };
 		1A755309254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530A254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
 		1A75530B254F573F006333A7 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A755308254F573F006333A7 /* FrequencyCounter.swift */; };
@@ -70,6 +73,7 @@
 		1A42433C25500513007E72C3 /* PlayersStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersStateModel.swift; sourceTree = "<group>"; };
 		1A424343255006BC007E72C3 /* FrequencyCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCount.swift; sourceTree = "<group>"; };
 		1A42434A255009BC007E72C3 /* RollTrackerStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollTrackerStateModel.swift; sourceTree = "<group>"; };
+		1A4BA02C27939140007E8C75 /* Logo - Grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo - Grey.png"; sourceTree = "<group>"; };
 		1A755308254F573F006333A7 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
 		1A75530F254F6940006333A7 /* TurnTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTracker.swift; sourceTree = "<group>"; };
 		1A87C687259610CF00AAC667 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				58CCF881237924130064DE23 /* shutterstock_1103125457.png */,
+				1A4BA02C27939140007E8C75 /* Logo - Grey.png */,
 				5873685923791301002D450D /* boardgame dice */,
 				5873687323791302002D450D /* boardgame diceTests */,
 				5873687E23791302002D450D /* boardgame diceUITests */,
@@ -302,6 +307,7 @@
 				5873686A23791302002D450D /* LaunchScreen.storyboard in Resources */,
 				58CCF882237924140064DE23 /* shutterstock_1103125457.png in Resources */,
 				5873686723791302002D450D /* Preview Assets.xcassets in Resources */,
+				1A4BA02D27939141007E8C75 /* Logo - Grey.png in Resources */,
 				5873686423791302002D450D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4BA02E27939141007E8C75 /* Logo - Grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4BA02F27939141007E8C75 /* Logo - Grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"boardgame dice/Preview Content\"";
 				DEVELOPMENT_TEAM = EL897HUGUG;
 				ENABLE_PREVIEWS = YES;
@@ -547,7 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"boardgame dice/Preview Content\"";
 				DEVELOPMENT_TEAM = EL897HUGUG;
 				ENABLE_PREVIEWS = YES;
